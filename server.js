@@ -9,7 +9,7 @@ app.use(express.json());
 
 app.use(cors());
 // Import routes
-
+const AuthRoutes = require('./routes/AuthRoutes')
 
 // Connect to MongoDB
 const connectDB = async () => {
@@ -31,7 +31,7 @@ const connectDB = async () => {
 connectDB();
 
 // Routes
-////asdasl;dmaskmd
+app.use('/api/auth',AuthRoutes)
 
 
 app.get("/", (req, res) => {
